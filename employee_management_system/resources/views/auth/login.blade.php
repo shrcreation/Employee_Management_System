@@ -61,6 +61,11 @@
 
                                     <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
                                         class="img-fluid" alt="Sample image">
+                                    {{-- <img src="{{ asset('img/Global skills logo and gif file Final.gif') }}"
+                                        class="img-fluid text-center" alt="Sample image"
+                                        style="width: 300px;
+                                        height: 300px;
+                                        margin-left: 70px;"> --}}
 
                                 </div>
                             </div>

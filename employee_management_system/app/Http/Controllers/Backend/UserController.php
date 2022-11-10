@@ -12,9 +12,12 @@ use App\Http\Requests\UserUpdateRequest;
 class UserController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
         $users = User::all();
+        if ($request->has('search')) {
+            $users = User::where('username', 'like', "%{$request->search}%")->orWhere('email', 'like', "%{$request->search}%")->get();
+        }
         return view('users.index', compact('users'));
     }
     public function create()
@@ -56,8 +59,13 @@ class UserController extends Controller
         return redirect()->route('users.index')->with('message', 'User Updated Succesfully');
     }
 
-    public function destroy($id)
+    public function destroy(User $user)
     {
         //
+        if (auth()->user()->id == $user->id) {
+            return redirect()->route('users.index')->with('message', 'You are deleting yourself.');
+        }
+        $user->delete();
+        return redirect()->route('users.index')->with('message', 'User Deleted Succesfully');
     }
 }

@@ -30,7 +30,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link" href="{{ route('home') }}">
@@ -42,7 +42,7 @@
             <hr class="sidebar-divider">
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ route('users.index') }}">
                     <span>Employee Management</span></a>
             </li>
 
@@ -58,10 +58,10 @@
                 </a>
                 <div id="collapseSystem" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="#">Country</a>
-                        <a class="collapse-item" href="#">State</a>
-                        <a class="collapse-item" href="#">Department</a>
-                        <a class="collapse-item" href="#">City</a>
+                        <a class="collapse-item" href="{{ route('countries.index') }}">Country</a>
+                        <a class="collapse-item" href="{{ route('states.index') }}">District</a>
+                        <a class="collapse-item" href="{{ route('departments.index') }}">Department</a>
+                        <a class="collapse-item" href="{{ route('cities.index') }}">City</a>
                     </div>
                 </div>
             </li>
