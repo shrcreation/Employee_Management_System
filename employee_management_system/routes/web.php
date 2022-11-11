@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\EmployeeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -22,8 +23,10 @@ Route::resource('countries',CountryController::class);
 Route::resource('states', StateController::class);
 Route::resource('cities', CityController::class);
 Route::resource('departments', DepartmentController::class);
-
-
-
+Route::resource('employees', EmployeeController::class);
 
 Route::post('users/{user}/change-password', [ChangePasswordController::class, 'change_password'])->name('users.change.password');
+
+
+
+
