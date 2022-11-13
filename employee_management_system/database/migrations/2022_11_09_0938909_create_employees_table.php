@@ -21,8 +21,6 @@ return new class extends Migration
             $table->string('address');
             $table->foreignId('department_id')->constrained();
             $table->foreignId('country_id')->constrained();
-            $table->foreignId('state_id')->constrained();
-            $table->foreignId('city_id')->constrained();
             $table->char('zip_code');
             $table->date('birthdate')->nullable();
             $table->date('date_hired')->nullable();

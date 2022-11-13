@@ -32,6 +32,7 @@ class UserController extends Controller
             'last_name' => $request->last_name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'image' => $request->image,
         ]);
 
         return redirect()->route('users.index')->with('message', 'User Register Succesfully');
@@ -54,6 +55,7 @@ class UserController extends Controller
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'email' => $request->email,
+            'image' => $request->image,
         ]);
 
         return redirect()->route('users.index')->with('message', 'User Updated Succesfully');

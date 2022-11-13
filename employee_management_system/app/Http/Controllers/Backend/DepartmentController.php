@@ -68,7 +68,8 @@ class DepartmentController extends Controller
     public function update(DepartmentStoreRequest $request, Department $department)
     {
         $department->update([
-            'name' => $request->name
+            'name' => $request->name,
+            'designation' => $request->designation
         ]);
 
         return redirect()->route('departments.index')->with('message', 'Department Updated Successfully');

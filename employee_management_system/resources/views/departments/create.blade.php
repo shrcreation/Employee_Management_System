@@ -33,11 +33,25 @@
                                     @enderror
                                 </div>
                             </div>
+                            <div class="form-group row">
+                                <label for="designation" class="col-md-4 col-form-label text-md-right">{{ __('Designation') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="designation" type="text" class="form-control @error('designation') is-invalid @enderror"
+                                        name="designation" value="{{ old('designation') }}" required autocomplete="designation" autofocus>
+
+                                    @error('designation')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-success">
-                                        {{ __('Store') }}
+                                        {{ __('Create') }}
                                     </button>
                                 </div>
                             </div>
